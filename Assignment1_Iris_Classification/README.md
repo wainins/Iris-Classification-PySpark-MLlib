@@ -8,17 +8,15 @@ A machine learning project demonstrating multiclass classification using Apache 
 ## Overview
 
 This project showcases a complete ML workflow in PySpark:
-- Data loading and preprocessing
-- Feature engineering with VectorAssembler
-- Model training with cross-validation and hyperparameter tuning
-- Performance evaluation using multiple metrics
-- Comparative analysis of different algorithms
 
-## Project Flow
-
-This project follows a structured machine learning pipeline:
-
-Raw Data → Preprocessing → Feature Engineering → Model Training → Hyperparameter Tuning → Evaluation → Comparison
+```mermaid
+flowchart LR
+    A[Data Loading & Preprocessing] --> B[Feature Engineering]
+    B --> C[Train-Test Split]
+    C --> D[Model Training & Hyperparameter Tuning]
+    D --> E[Performance Evaluation]
+    E --> F[Model Comparison]
+```
 
 
 ## Dataset
@@ -30,8 +28,14 @@ Raw Data → Preprocessing → Feature Engineering → Model Training → Hyperp
   - Sepal width (cm)
   - Petal length (cm)
   - Petal width (cm)
-- **Target**: 3 species (Setosa, Versicolor, Virginica)
+- **Target**:
+  
+| Setosa | Versicolor | Virginica |
+|---------|---------|---------|
+| <img src="images/setosa.jpg" width="250"> | <img src="images/versicolor.jpg" width="250"> | <img src="images/virginica.jpg" width="250"> |
+
 - **Source**: [GitHub](https://raw.githubusercontent.com/plotly/datasets/master/iris-data.csv)
+
 
 ## Methodology
 
