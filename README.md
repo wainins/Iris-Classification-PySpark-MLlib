@@ -43,15 +43,33 @@
 
 ##  Technologies Covered
 
-| Category | Technologies |
-| :--- | :--- |
-| **Hadoop Ecosystem** | Hadoop, HDFS, MapReduce, Apache Pig, Apache Hive, Sqoop |
-| **Big Data Processing** | Apache Spark, Parallel Computing, Distributed Data Processing |
-| **NoSQL Databases** | MongoDB, Cassandra, HBase |
-| **Query & Resource Management** | Apache Drill, Apache Phoenix, Presto, YARN, Apache Tez |
-| **Workflow & Coordination** | Apache Oozie, Apache ZooKeeper |
-| **Data Analytics Tools** | Apache Zeppelin |
-
+```mermaid
+mindmap
+  root((Data Management))
+    Hadoop Ecosystem
+      HDFS
+      MapReduce
+      Hive
+      Pig
+      Sqoop
+    Big Data Processing
+      Apache Spark
+      Parallel Computing
+      Distributed Systems
+    NoSQL Databases
+      MongoDB
+      Cassandra
+      HBase
+    Management & Coordination
+      YARN
+      Tez
+      ZooKeeper
+      Oozie
+    Query Engines
+      Drill
+      Phoenix
+      Presto
+```
 ---
 
 ##  Repository Structure
@@ -66,7 +84,7 @@ STQD6324_Data_Management/
     ├── iris_classification_pyspark.ipynb/
     └── iris_setosa.png/
     └── iris_verginica.png/
-    └── iris_vversicolor.png/
+    └── iris_versicolor.png/
 ```
 
 ---
