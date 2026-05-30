@@ -23,7 +23,7 @@
 ##  Assessment Structure
 
 - [x] Quiz
-- [x] Assignment 1 
+- [x] [Assignment 1](https://github.com/wainins/STQD6324_Data_Management/tree/main/Assignment1_Iris_Classification) 
 - [ ] Assignment 2 
 - [ ] Final Report
 
