@@ -56,3 +56,14 @@ STQD6324_Data_Management/
     └── iris_verginica.png/
     └── iris_vversicolor.png/
 ```
+
+---
+
+##  License
+
+This repository is intended for educational and academic purposes under:
+
+**STQD6324 – Data Management**  
+Department of Mathematical Sciences  
+Faculty of Science and Technology (FST)  
+Universiti Kebangsaan Malaysia (UKM)
