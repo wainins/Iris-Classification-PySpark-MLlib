@@ -2,6 +2,8 @@
 
 A machine learning project demonstrating multiclass classification using Apache Spark MLlib. This project implements and compares three classification algorithms on the classic Iris dataset.
 
+![Iris Classification with PySpark MLlib](images/Iris Classification with PySpark MLlib.png)
+
 ## Overview
 
 This project showcases a complete ML workflow in PySpark:
@@ -28,7 +30,7 @@ Raw Data → Preprocessing → Feature Engineering → Model Training → Hyperp
   - Petal length (cm)
   - Petal width (cm)
 - **Target**: 3 species (Setosa, Versicolor, Virginica)
-- **Source**: (https://raw.githubusercontent.com/plotly/datasets/master/iris-data.csv)
+- **Source**: [GitHub](https://raw.githubusercontent.com/plotly/datasets/master/iris-data.csv)
 
 ## Methodology
 
@@ -56,16 +58,16 @@ Each model is optimized using:
 
 | Model               | Accuracy | Precision | Recall | F1-Score |
 |---------------------|----------|-----------|--------|----------|
-| Decision Tree       | ~0.93    | ~0.93     | ~0.93  | ~0.93    |
-| Random Forest       | ~0.97    | ~0.97     | ~0.97  | ~0.97    |
 | Logistic Regression | ~0.97    | ~0.97     | ~0.97  | ~0.97    |
+| Decision Tree       | ~0.91    | ~0.94     | ~0.91  | ~0.91    |
+| Random Forest       | ~0.97    | ~0.97     | ~0.97  | ~0.97    |
 
 
 ### Key Findings
 
-1. **Random Forest** and **Logistic Regression** achieved the highest accuracy, both approaching 97%.
+1. **Random Forest** and **Logistic Regression** achieved the highest observed performance across all evaluation.
 2. **Petal measurements** (length and width) are the most important features for classification.
-3. **Setosa** is perfectly separable; most misclassifications occur between Versicolor and Virginica.
+3. **Setosa** is perfectly separable. Most misclassifications occur between Versicolor and Virginica.
 
 ## Reproduce the Analysis
 ### Prerequisites
