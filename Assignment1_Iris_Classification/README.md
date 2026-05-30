@@ -22,6 +22,7 @@ flowchart LR
 ## Dataset
 
 **Iris Dataset** (Fisher, 1936)
+- **Source**: [GitHub](https://raw.githubusercontent.com/plotly/datasets/master/iris-data.csv)
 - **Samples**: 150 iris flowers
 - **Features**: 4 continuous measurements
   - Sepal length (cm)
@@ -32,9 +33,8 @@ flowchart LR
   
 | Setosa | Versicolor | Virginica |
 |---------|---------|---------|
-| <img src="images/setosa.jpg" width="250"> | <img src="images/versicolor.jpg" width="250"> | <img src="images/virginica.jpg" width="250"> |
+| <img width="2000" height="2000" alt="Image" src="https://github.com/user-attachments/assets/5582d309-3d13-4974-8ccf-8757a5d985ae" /> | <img width="2000" height="2000" alt="Image" src="https://github.com/user-attachments/assets/a1a35740-46d2-409d-94ba-c18c1012abaf" /> | <img width="2000" height="2000" alt="Image" src="https://github.com/user-attachments/assets/356dd710-ee74-4582-92bc-171a65e25c54" /> |
 
-- **Source**: [GitHub](https://raw.githubusercontent.com/plotly/datasets/master/iris-data.csv)
 
 
 ## Methodology
