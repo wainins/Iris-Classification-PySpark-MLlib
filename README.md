@@ -31,43 +31,14 @@
 
 ##  Technologies Covered
 
-### Hadoop Ecosystem
-
-- Hadoop
-- HDFS
-- MapReduce
-- Apache Pig
-- Apache Hive
-- Sqoop
-
-### Big Data Processing
-
-- Apache Spark
-- Parallel Computing
-- Distributed Data Processing
-
-### NoSQL Databases
-
-- MongoDB
-- Cassandra
-- HBase
-
-### Query & Resource Management
-
-- Apache Drill
-- Apache Phoenix
-- Presto
-- YARN
-- Apache Tez
-
-### Workflow & Coordination
-
-- Apache Oozie
-- Apache ZooKeeper
-
-### Data Analytics Tools
-
-- Apache Zeppelin
+| Category | Technologies |
+| :--- | :--- |
+| **Hadoop Ecosystem** | Hadoop, HDFS, MapReduce, Apache Pig, Apache Hive, Sqoop |
+| **Big Data Processing** | Apache Spark, Parallel Computing, Distributed Data Processing |
+| **NoSQL Databases** | MongoDB, Cassandra, HBase |
+| **Query & Resource Management** | Apache Drill, Apache Phoenix, Presto, YARN, Apache Tez |
+| **Workflow & Coordination** | Apache Oozie, Apache ZooKeeper |
+| **Data Analytics Tools** | Apache Zeppelin |
 
 ---
 
