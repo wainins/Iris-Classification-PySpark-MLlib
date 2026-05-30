@@ -154,6 +154,7 @@ To run locally, ensure you have **Java JDK 8 or 11** installed for the Spark run
 !pip install pyspark pandas matplotlib seaborn
 ```
 
+<br>
 
 ## Author
 * **Name:** Wan Ainin Sofiya binti Wan Mustafa
