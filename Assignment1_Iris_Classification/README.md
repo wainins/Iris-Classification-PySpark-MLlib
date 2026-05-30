@@ -8,8 +8,8 @@
   <a href="#overview">Overview</a> •
   <a href="#dataset">Dataset</a> •
   <a href="#methodology">Methodology</a> •
-  <a href="#notebook-structure">Structure</a> •
-  <a href="#results-summary">Results</a> •
+  <a href="#notebook-structure">Notebook Structure</a> •
+  <a href="#results-summary">Results Summary</a> •
   <a href="#reproduce-the-analysis">Run Project</a>
 </p>
 
