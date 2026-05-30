@@ -78,16 +78,10 @@ STQD6324_Data_Management/
 │
 ├── README.md
 │
-├── Assignment1_Iris_Classification/
-│   ├── week01-introduction/
-│   ├── week02-data-security/
-│   ├── week03-hadoop/
-│   ├── week04-hdfs-mapreduce/
-│
-└── resources/
-    ├── slides/
-    ├── cheat-sheets/
-    └── tutorials/
+└── Assignment1_Iris_Classification/
+    ├── Title.png/
+    ├── iris_classification_pyspark.ipynb/
+    └── iris_setosa.png/
+    └── iris_verginica.png/
+    └── iris_vversicolor.png/
 ```
-
-
