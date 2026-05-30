@@ -107,7 +107,7 @@ iris_classification_pyspark.ipynb
 > [!NOTE]
 > ###  Key Findings
 > 1. **Top Performers:** Logistic Regression and Random Forest achieved the highest observed performance across all evaluation.
-> 2. **Feature Importance:** Petal measurements (length and width) are the most important features for classification. Sepal features contribute minimally to model decision boundaries.
+> 2. **Feature Importance:** Petal measurements (length and width) are the most important features for classification. Sepal features contribute minimally.
 > 3. **Separability:** Setosa is perfectly separable. Most misclassifications occur between Versicolor and Virginica.
    
 <br>
