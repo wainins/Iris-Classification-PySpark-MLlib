@@ -18,22 +18,6 @@ flowchart LR
     E --> F[Model Comparison]
 ```
 
-## 📂 Project Structure
-
-- `iris_classification_pyspark.ipynb`
-  - 1. Environment Setup and Imports
-  - 2. Load the Iris dataset
-  - 3. Data Preprocessing
-  - 4. Train-Test Split
-  - 5. Model Implementation with Hyperparameter Tuning
-    - Logistic Regression
-    - Decision Tree
-    - Random Forest
-  - 6. Model Evaluation
-  - 7. Predictions on Test Data
-  - 8. Comparative Analysis
-  - 9. Cleanup
-
 ## Dataset
 
 **Iris Dataset** (Fisher, 1936)
@@ -78,6 +62,24 @@ Each model is optimized using:
 
 <br> 
 
+## Notebook Structure
+
+```text
+iris_classification_pyspark.ipynb
+├── 1. Environment Setup and Imports
+├── 2. Load Iris Dataset
+├── 3. Data Preprocessing
+├── 4. Train-Test Split
+├── 5. Model Implementation with Hyperparameter Tuning
+│   ├── Logistic Regression
+│   ├── Decision Tree
+│   └── Random Forest
+├── 6. Model Evaluation
+├── 7. Predictions on Test Data
+└── 8. Comparative Analysis
+└── 9. Cleanup
+```
+
 ## Results Summary
 
 | Model               | Accuracy | Precision | Recall | F1-Score |
@@ -95,6 +97,7 @@ Each model is optimized using:
 
 <br>
 
+
 ## Reproduce the Analysis
 ### Prerequisites
 ![PySpark](https://img.shields.io/badge/PySpark-MLlib-orange)
@@ -104,19 +107,29 @@ Each model is optimized using:
 ![Seaborn](https://img.shields.io/badge/Seaborn-Statistics-2E8B57)
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626)
 
-### Installation
+### How to run
 This project was developed using **Google Colab** to simplify the execution of Apache Spark (PySpark) without requiring local installation of Java or Spark.
 
-1. Open the notebook file:  
-`iris_classification_pyspark.ipynb`
+---
 
-2. Open Google Colab:  
-https://colab.research.google.com/
+### Recommended: Google Colab
 
-3. Upload the notebook and connect runtime:
-- `Runtime → Connect`
+1. Download the notebook file :  `iris_classification_pyspark.ipynb`
+2. Go to: [Google Colab](https://colab.research.google.com/)↗️ 
+3. Upload the notebook file
+4. Make sure to connect runtime: `Runtime → Connect`
+5. Install required libraries (if needed):
 
-### Install Required Libraries
+```python
+!pip install pyspark pandas matplotlib seaborn
+```
+---
 
-```bash id="bash2"
-pip install pyspark pandas matplotlib seaborn
+### Alternative: Local Jupyter Notebook
+
+If prefer running locally:
+
+```bash id="run2"
+pip install pyspark pandas matplotlib seaborn jupyter
+jupyter notebook iris_classification_pyspark.ipynb
+```
