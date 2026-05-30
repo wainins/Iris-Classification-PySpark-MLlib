@@ -1,8 +1,9 @@
 # Iris Classification with PySpark MLlib
 
+<img width="1584" height="396" alt="Image" src="https://github.com/user-attachments/assets/f2f67a2c-239f-449f-9de8-32c39f9fe67b" />
+
 A machine learning project demonstrating multiclass classification using Apache Spark MLlib. This project implements and compares three classification algorithms on the classic Iris dataset.
 
-![Iris Classification with PySpark MLlib](images/Iris_Classification_with_PySpark_MLlib.png)
 
 ## Overview
 
