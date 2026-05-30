@@ -10,7 +10,8 @@
   <a href="#methodology">Methodology</a> •
   <a href="#notebook-structure">Notebook Structure</a> •
   <a href="#results-summary">Results Summary</a> •
-  <a href="#reproduce-the-analysis">Run Project</a>
+  <a href="#reproduce-the-analysis">Run Project</a> •
+  <a href="#author">Author</a>
 </p>
 
 
@@ -119,11 +120,12 @@ iris_classification_pyspark.ipynb
 This project was developed using **Google Colab** to simplify the execution of Apache Spark (PySpark) without requiring local installation of Java or Spark.
 
 ### Environment Used
-![PySpark](https://img.shields.io/badge/PySpark-4.0.2-orange?logo=apachespark)
-![pandas](https://img.shields.io/badge/pandas-2.2.2-150458?logo=pandas)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-3.10.0-11557c)
-![Seaborn](https://img.shields.io/badge/Seaborn-0.13.2-2E8B57)
-![Google Colab](https://img.shields.io/badge/Google-Colab-F37626)
+
+![PySpark](https://img.shields.io/badge/PySpark-4.0.2-E25A1C?logo=apachespark&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-2.2.2-150458?logo=pandas&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-3.10.0-11557C?logo=plotly&logoColor=white)
+![Seaborn](https://img.shields.io/badge/Seaborn-0.13.2-4C72B0&logo=python&logoColor=white)
+![Google Colab](https://img.shields.io/badge/Google%20Colab-F9AB00?logo=googlecolab&logoColor=white)
 
 ### Execution Guide
 
@@ -151,3 +153,12 @@ To run locally, ensure you have **Java JDK 8 or 11** installed for the Spark run
 ```python
 !pip install pyspark pandas matplotlib seaborn
 ```
+
+
+## Author
+
+WAN AININ SOFIYA BINTI WAN MUSTAFA
+
+P160638 
+
+STQD6324 Data Management
