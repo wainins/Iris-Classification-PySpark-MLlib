@@ -1,8 +1,22 @@
 # Iris Classification with PySpark MLlib
 
-<img width="1584" height="396" alt="Image" src="https://github.com/user-attachments/assets/f2f67a2c-239f-449f-9de8-32c39f9fe67b" />
+<p align="center">
+  <img width="100%" alt="Project Banner" src="https://github.com/user-attachments/assets/f2f67a2c-239f-449f-9de8-32c39f9fe67b" />
+</p>
+
+<p align="center">
+  <a href="#-overview">Overview</a> •
+  <a href="#-dataset">Dataset</a> •
+  <a href="#-methodology">Methodology</a> •
+  <a href="#-notebook-structure">Structure</a> •
+  <a href="#-results-summary">Results</a> •
+  <a href="#-reproduce-the-analysis">Run Project</a>
+</p>
+
+---
 
 A machine learning project demonstrating multiclass classification using Apache Spark MLlib. This project implements and compares three classification algorithms on the classic Iris dataset.
+
 
 
 ## Overview
@@ -64,7 +78,7 @@ Each model is optimized using:
 
 ## Notebook Structure
 
-```text
+```yaml
 iris_classification_pyspark.ipynb
 ├── 1. Environment Setup and Imports
 ├── 2. Load Iris Dataset
@@ -80,6 +94,8 @@ iris_classification_pyspark.ipynb
 └── 9. Cleanup
 ```
 
+<br>
+
 ## Results Summary
 
 | Model               | Accuracy | Precision | Recall | F1-Score |
@@ -88,12 +104,11 @@ iris_classification_pyspark.ipynb
 | Decision Tree       | ~0.91    | ~0.94     | ~0.91  | ~0.91    |
 | Random Forest       | ~0.97    | ~0.97     | ~0.97  | ~0.97    |
 
-
-### Key Findings
-
-1. **Random Forest** and **Logistic Regression** achieved the highest observed performance across all evaluation.
-2. **Petal measurements** (length and width) are the most important features for classification. Sepal features contribute minimally to model decision boundaries.
-3. **Setosa** is perfectly separable. Most misclassifications occur between Versicolor and Virginica.
+> [!NOTE]
+> ###  Key Findings
+> 1. **Top Performers:** Logistic Regression and Random Forest achieved the highest observed performance across all evaluation.
+> 2. **Feature Importance:** Petal measurements (length and width) are the most important features for classification. Sepal features contribute minimally to model decision boundaries.
+> 3. **Separability:** Setosa is perfectly separable. Most misclassifications occur between Versicolor and Virginica.
    
 <br>
 
@@ -109,7 +124,7 @@ This project was developed using **Google Colab** to simplify the execution of A
 ![Seaborn](https://img.shields.io/badge/Seaborn-0.13.2-2E8B57)
 ![Google Colab](https://img.shields.io/badge/Google-Colab-F37626)
 
-### How to run
+### Execution Guide
 
 **Recommended: Google Colab**
 
@@ -126,9 +141,7 @@ This project was developed using **Google Colab** to simplify the execution of A
 
 **Alternative: Local Jupyter Notebook**
 
-If prefer running  the project locally, this project requires the following environment setup:
-
-- Java JDK 8 or 11 (required for Spark runtime)
+To run locally, ensure you have **Java JDK 8 or 11** installed for the Spark runtime environment.
 
 1. Download the notebook file :  `iris_classification_pyspark.ipynb`
 2. Launch the notebook file in Jupyter Notebook
