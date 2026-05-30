@@ -18,6 +18,21 @@ flowchart LR
     E --> F[Model Comparison]
 ```
 
+## 📂 Project Structure
+
+- `iris_classification_pyspark.ipynb`
+  - 1. Environment Setup and Imports
+  - 2. Load the Iris dataset
+  - 3. Data Preprocessing
+  - 4. Train-Test Split
+  - 5. Model Implementation with Hyperparameter Tuning
+    - Logistic Regression
+    - Decision Tree
+    - Random Forest
+  - 6. Model Evaluation
+  - 7. Predictions on Test Data
+  - 8. Comparative Analysis
+  - 9. Cleanup
 
 ## Dataset
 
