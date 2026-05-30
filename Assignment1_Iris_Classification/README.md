@@ -92,27 +92,26 @@ iris_classification_pyspark.ipynb
 ### Key Findings
 
 1. **Random Forest** and **Logistic Regression** achieved the highest observed performance across all evaluation.
-2. **Petal measurements** (length and width) are the most important features for classification.
+2. **Petal measurements** (length and width) are the most important features for classification. Sepal features contribute minimally to model decision boundaries.
 3. **Setosa** is perfectly separable. Most misclassifications occur between Versicolor and Virginica.
-
+   
 <br>
 
 
 ## Reproduce the Analysis
-### Prerequisites
-![PySpark](https://img.shields.io/badge/PySpark-MLlib-orange)
-![Python](https://img.shields.io/badge/Python-3.10-blue)
-![Pandas](https://img.shields.io/badge/Pandas-Data%20Processing-150458)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-11557c)
-![Seaborn](https://img.shields.io/badge/Seaborn-Statistics-2E8B57)
-![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626)
 
-### How to run
 This project was developed using **Google Colab** to simplify the execution of Apache Spark (PySpark) without requiring local installation of Java or Spark.
 
----
+### Environment Used
+![PySpark](https://img.shields.io/badge/PySpark-4.0.2-orange?logo=apachespark)
+![pandas](https://img.shields.io/badge/pandas-2.2.2-150458?logo=pandas)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-3.10.0-11557c)
+![Seaborn](https://img.shields.io/badge/Seaborn-0.13.2-2E8B57)
+![Google Colab](https://img.shields.io/badge/Google-Colab-F37626)
 
-### Recommended: Google Colab
+### How to run
+
+**Recommended: Google Colab**
 
 1. Download the notebook file :  `iris_classification_pyspark.ipynb`
 2. Go to: [Google Colab](https://colab.research.google.com/)↗️ 
@@ -125,11 +124,16 @@ This project was developed using **Google Colab** to simplify the execution of A
 ```
 ---
 
-### Alternative: Local Jupyter Notebook
+**Alternative: Local Jupyter Notebook**
 
-If prefer running locally:
+If prefer running  the project locally, this project requires the following environment setup:
 
-```bash id="run2"
-pip install pyspark pandas matplotlib seaborn jupyter
-jupyter notebook iris_classification_pyspark.ipynb
+- Java JDK 8 or 11 (required for Spark runtime)
+
+1. Download the notebook file :  `iris_classification_pyspark.ipynb`
+2. Launch the notebook file in Jupyter Notebook
+3. Install required libraries :
+
+```python
+!pip install pyspark pandas matplotlib seaborn
 ```
