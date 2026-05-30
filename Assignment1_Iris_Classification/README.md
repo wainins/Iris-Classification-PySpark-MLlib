@@ -156,9 +156,5 @@ To run locally, ensure you have **Java JDK 8 or 11** installed for the Spark run
 
 
 ## Author
-
-WAN AININ SOFIYA BINTI WAN MUSTAFA
-
-P160638 
-
-STQD6324 Data Management
+* **Name:** Wan Ainin Sofiya binti Wan Mustafa
+* **Matric No:** P160638
