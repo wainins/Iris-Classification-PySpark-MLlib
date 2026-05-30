@@ -22,7 +22,7 @@ flowchart LR
 ## Dataset
 
 **Iris Dataset** (Fisher, 1936)
-- **Source**: [GitHub](https://raw.githubusercontent.com/plotly/datasets/master/iris-data.csv)
+- **Source**: [GitHub](https://raw.githubusercontent.com/plotly/datasets/master/iris-data.csv)↗️
 - **Samples**: 150 iris flowers
 - **Features**: 4 continuous measurements
   - Sepal length (cm)
@@ -35,14 +35,15 @@ flowchart LR
 |---------|---------|---------|
 | <img width="2000" height="2000" alt="Image" src="https://github.com/user-attachments/assets/5582d309-3d13-4974-8ccf-8757a5d985ae" /> | <img width="2000" height="2000" alt="Image" src="https://github.com/user-attachments/assets/a1a35740-46d2-409d-94ba-c18c1012abaf" /> | <img width="2000" height="2000" alt="Image" src="https://github.com/user-attachments/assets/356dd710-ee74-4582-92bc-171a65e25c54" /> |
 
-
+<br>
 
 ## Methodology
 
 ### Algorithms Implemented
-1. **Logistic Regression** - Multinomial classification with regularization
-2. **Decision Tree** - Single tree with tuned depth and impurity
-3. **Random Forest** - Ensemble of trees for improved generalization
+| Logistic Regression | Decision Tree | Random Forest |
+|---------|---------|---------|
+
+<br>
 
 ### Hyperparameter Tuning
 Each model is optimized using:
@@ -51,13 +52,16 @@ Each model is optimized using:
   - Logistic Regression: `regParam`, `elasticNetParam`, `maxIter`
   - Decision Tree: `maxDepth`, `impurity`, `minInstancesPerNode`
   - Random Forest: `numTrees`, `maxDepth`, `maxBins`
-  
+
+<br>
 
 ### Evaluation Metrics
-- Accuracy
-- Weighted Precision
-- Weighted Recall
-- F1-Score
+<kbd>🎯 Accuracy</kbd> &nbsp; 
+<kbd>🔍 Weighted Precision</kbd> &nbsp; 
+<kbd>📈 Weighted Recall</kbd> &nbsp; 
+<kbd>⚖️ F1-Score</kbd>
+
+<br> 
 
 ## Results Summary
 
@@ -74,5 +78,24 @@ Each model is optimized using:
 2. **Petal measurements** (length and width) are the most important features for classification.
 3. **Setosa** is perfectly separable. Most misclassifications occur between Versicolor and Virginica.
 
+<br>
+
 ## Reproduce the Analysis
 ### Prerequisites
+![PySpark](https://img.shields.io/badge/PySpark-MLlib-orange)
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Processing-150458)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-11557c)
+![Seaborn](https://img.shields.io/badge/Seaborn-Statistics-2E8B57)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626)
+
+### Installation
+```bash
+# Clone the repository
+git clone [github.com](https://github.com/yourusername/iris-spark-classification.git)
+cd iris-spark-classification
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+# Install dependencies
+pip install -r requirements.txt
