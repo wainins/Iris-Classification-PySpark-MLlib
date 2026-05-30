@@ -14,11 +14,9 @@
   <a href="#author">Author</a>
 </p>
 
+> A machine learning project demonstrating multiclass classification using Apache Spark MLlib. This project implements and compares three classification algorithms on the classic Iris dataset.
 
 ---
-
-A machine learning project demonstrating multiclass classification using Apache Spark MLlib. This project implements and compares three classification algorithms on the classic Iris dataset.
-
 
 
 ## Overview
