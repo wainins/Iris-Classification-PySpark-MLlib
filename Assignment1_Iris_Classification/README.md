@@ -90,12 +90,18 @@ Each model is optimized using:
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626)
 
 ### Installation
-```bash
-# Clone the repository
-git clone [github.com](https://github.com/yourusername/iris-spark-classification.git)
-cd iris-spark-classification
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-# Install dependencies
-pip install -r requirements.txt
+This project was developed using **Google Colab** to simplify the execution of Apache Spark (PySpark) without requiring local installation of Java or Spark.
+
+1. Open the notebook file:  
+`iris_classification_pyspark.ipynb`
+
+2. Open Google Colab:  
+https://colab.research.google.com/
+
+3. Upload the notebook and connect runtime:
+- `Runtime → Connect`
+
+### Install Required Libraries
+
+```bash id="bash2"
+pip install pyspark pandas matplotlib seaborn
