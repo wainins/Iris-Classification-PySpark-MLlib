@@ -2,7 +2,7 @@
 
 A machine learning project demonstrating multiclass classification using Apache Spark MLlib. This project implements and compares three classification algorithms on the classic Iris dataset.
 
-![Iris Classification with PySpark MLlib](images/Iris Classification with PySpark MLlib.png)
+![Iris Classification with PySpark MLlib](images/Iris_Classification_with_PySpark_MLlib.png)
 
 ## Overview
 
