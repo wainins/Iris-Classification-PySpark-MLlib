@@ -44,7 +44,6 @@ F --> G[Write Results to Cassandra]
 
 G --> H[Read Back from Cassandra]
 
-H --> I[Validation]
 ```
 
 ### Workflow Screenshot
