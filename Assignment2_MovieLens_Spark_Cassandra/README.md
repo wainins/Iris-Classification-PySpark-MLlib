@@ -103,7 +103,7 @@ The following analytical tasks were implemented using Apache Spark and results w
 The average rating and total number of ratings were calculated for every movie in the dataset.
 
 ### Result Table
-![Task X Result](...)
+![Task X Result](<img width="1820" height="539" alt="Image" src="https://github.com/user-attachments/assets/8dfd6e10-ade5-45e7-8749-0780cc7707c2" />)
 
 ### Visualisation
 ![Task X Chart](...)
@@ -119,7 +119,7 @@ Movie ratings varied considerably across the dataset. Some movies achieved high 
 The ten highest-rated movies were identified based on average rating.
 
 ### Result Table
-![Task X Result](...)
+![Task X Result](<img width="1844" height="541" alt="Image" src="https://github.com/user-attachments/assets/7e153477-8654-4684-9bff-b4d77591d153" />)
 
 ### Visualisation
 ![Task X Chart](...)
@@ -135,7 +135,7 @@ All top-ranked movies achieved a perfect average rating of 5.0. However, most of
 Users with at least 50 ratings were identified and their favourite genre was determined based on the genre they rated most frequently.
 
 ### Result Table
-![Task X Result](...)
+![Task X Result](<img width="1824" height="467" alt="Image" src="https://github.com/user-attachments/assets/7aaabeb2-635e-41db-b165-1df9691f5482" />)
 
 ### Visualisation
 ![Task X Chart](...)
@@ -151,7 +151,7 @@ Drama, Comedy, and Action were the most frequently rated genres among active use
 Users younger than 20 years old were extracted from the dataset.
 
 ### Result Table
-![Task X Result](...)
+![Task X Result](<img width="1824" height="465" alt="Image" src="https://github.com/user-attachments/assets/b51becd1-4ee3-49a5-b298-8e5e8dc2cb3a" />)
 
 ### Visualisation
 ![Task X Chart](...)
@@ -168,7 +168,7 @@ Most users under 20 were teenagers between 15 and 19 years old and were primaril
 Users whose occupation was scientist and whose age was between 30 and 40 years old were identified.
 
 ### Result Table
-![Task X Result](...)
+![Task X Result](<img width="1819" height="470" alt="Image" src="https://github.com/user-attachments/assets/4cf68e5f-027d-45e1-8923-8f60afe593ec" />)
 
 ### Visualisation
 ![Task X Chart](...)
