@@ -1,7 +1,7 @@
 # MovieLens 100K Data Pipeline using Apache Spark & Cassandra
 
 <p align="center">
-  <img width="1584" height="396" alt="Image" src="https://github.com/user-attachments/assets/0599c6ac-51c6-459f-8bf1-2f94a2ab141a" />
+  <img width="1584" height="396" alt="Image" src="https://github.com/user-attachments/assets/072c5aa5-d032-4175-b942-96737dd97993" />
 </p>
 
 <p align="center">
@@ -25,44 +25,6 @@
 The objective is to build a Python-based data pipeline using Apache Spark and Cassandra to perform analytical queries on the MovieLens 100K dataset.
 
 The project demonstrates:
-
-- Data ingestion into HDFS
-- Creation of Resilient Distributed Datasets (RDDs)
-- Transformation of RDDs into Spark DataFrames
-- Data cleaning and preprocessing
-- Analytical querying using Spark SQL
-- Integration with Cassandra
-- Reading data back from Cassandra for validation
-
----
-
-# Dataset
-
-### Source
-
-MovieLens 100K Dataset
-
-https://grouplens.org/datasets/movielens/
-
-### Files Used
-
-| File | Description |
-|--------|--------|
-| u.data | User ratings data |
-| u.user | User demographic information |
-| u.item | Movie information and genres |
-
-### Dataset Summary
-
-| Dataset | Records |
-|----------|----------|
-| Ratings | 100,000 |
-| Users | 943 |
-| Movies | 1,682 |
-
----
-
-# Workflow
 
 ```mermaid
 flowchart LR
@@ -92,6 +54,27 @@ Insert screenshot here:
 ```text
 screenshots/workflow.png
 ```
+---
+
+# Dataset
+
+### Source: [MovieLens 100K Dataset](https://grouplens.org/datasets/movielens/)↗️
+
+### Files Used
+
+| File | Description |
+|--------|--------|
+| u.data | User ratings data |
+| u.user | User demographic information |
+| u.item | Movie information and genres |
+
+### Dataset Summary
+
+| Dataset | Records |
+|----------|----------|
+| Ratings | 100,003 |
+| Users | 943 |
+| Movies | 1,682 |
 
 ---
 
@@ -422,43 +405,40 @@ movielens-spark-cassandra-pipeline/
 
 # Reproducibility
 
-## Execution Steps
+## Development Environment
 
-### 1. Start Required Services
+This project was developed and tested using the following environment:
 
-Start Hadoop, Spark and Cassandra services.
+| Component | Version |
+|------------|------------|
+| Apache Zeppelin | 0.7.3 |
+| Apache Spark | 2.3.1 |
+| PySpark | 2.3.1 |
+| Apache Cassandra | 3.11.17 |
+| CQLSH | 5.0.1 |
+| Hadoop (HDFS) | HDP Sandbox |
+| Python | 2.7.5 |
 
-### 2. Upload Dataset to HDFS
+---
 
-```bash
-hdfs dfs -mkdir /movielens
+## Running the Project
 
-hdfs dfs -put u.data /movielens/
-hdfs dfs -put u.user /movielens/
-hdfs dfs -put u.item /movielens/
-```
-
-### 3. Execute Notebook
-
-Open:
+1. Ensure Hadoop, Spark, Cassandra, and Zeppelin services are running.
+2. Open Apache Zeppelin.
+3. Import the notebook file:
 
 ```text
-assignment2_movielens.ipynb
+movielens_assignment2.json
 ```
 
-Run all cells sequentially.
+4. Execute the notebook paragraphs sequentially from top to bottom.
 
-### 4. Create Cassandra Schema
+---
+## Notes
 
-Execute the Cassandra schema creation script.
-
-### 5. Write Results into Cassandra
-
-Spark DataFrames are written into Cassandra tables.
-
-### 6. Validate Results
-
-Read Cassandra tables back into Spark DataFrames and verify outputs.
+All outputs presented in this repository were generated directly from the provided Zeppelin notebook.
+Zeppelin was selected as the development environment because it provides native integration with Apache Spark which allow Spark jobs to be executed directly within interactive notebook paragraphs.
+This notebook also supports built-in visualisation of query results which improves interpretability and reduces the need for external plotting tools.
 
 ---
 
