@@ -92,127 +92,20 @@ movielens_analysis_spark_cassandra.json
 
 ---
 
-# Implementation
+# Analytical Tasks
 
-## Step 1: Load Dataset into HDFS
+The following analytical tasks were implemented using Apache Spark and results were stored in Apache Cassandra:
 
-The MovieLens dataset files were uploaded into HDFS before processing.
-
-### Screenshot
-
-Insert screenshot of:
-
-```bash
-hdfs dfs -ls /movielens
-```
-
-File:
-
-```text
-screenshots/hdfs_files.png
-```
-
+| Task No. | Description | Cassandra Table |
+|----------|-------------|-----------------|
+| 1 | Average rating for each movie | avg_movie_ratings |
+| 2 | Top 10 movies by highest average rating | top10_movies |
+| 3 | Favourite genre of active users (≥ 50 ratings) | user_fav_genre |
+| 4 | Users under 20 years old | users_under20 |
+| 5 | Scientists aged between 30 and 40 | scientists_30_40 |
 ---
 
-## Step 2: Create RDD Objects
-
-The raw text files were loaded into Spark and converted into RDDs.
-
-RDDs created:
-
-- ratings_rdd
-- users_rdd
-- movies_rdd
-
-Example:
-
-```python
-ratings_rdd = sc.textFile("/movielens/u.data")
-users_rdd = sc.textFile("/movielens/u.user")
-movies_rdd = sc.textFile("/movielens/u.item")
-```
-
----
-
-## Step 3: Transform RDDs into DataFrames
-
-RDDs were converted into Spark DataFrames using predefined schemas to enable SQL-based processing.
-
-### Screenshot
-
-Insert screenshot showing:
-
-```python
-ratings_df.printSchema()
-users_df.printSchema()
-movies_df.printSchema()
-```
-
-File:
-
-```text
-screenshots/schema.png
-```
-
----
-
-## Step 4: Data Cleaning and Preprocessing
-
-The following preprocessing steps were performed:
-
-- Schema validation
-- Data type conversion
-- Null value checking
-- Duplicate record checking
-- Column selection and formatting
-
-These steps ensured the dataset was ready for analytical processing.
-
----
-
-## Step 5: Analytical Queries Using Spark SQL
-
-The following analytical tasks were completed:
-
-1. Calculate average rating for each movie
-2. Identify top 10 highest rated movies
-3. Determine favourite genre of users who rated at least 50 movies
-4. Find users under 20 years old
-5. Find scientists aged between 30 and 40 years old
-
----
-
-## Step 6: Cassandra Integration
-
-A Cassandra keyspace named `movielens` was created.
-
-Results were stored in the following tables:
-
-| Table |
-|---------|
-| avg_movie_ratings |
-| top10_movies |
-| user_fav_genre |
-| users_under20 |
-| scientists_30_40 |
-
-### Screenshot
-
-Insert screenshot showing:
-
-```sql
-DESCRIBE KEYSPACE movielens;
-```
-
-File:
-
-```text
-screenshots/cassandra_schema.png
-```
-
----
-
-# Results
+# Results & Discussions
 
 ## Task 1: Average Rating for Each Movie
 
@@ -322,7 +215,7 @@ Such demographic segmentation is commonly used in recommendation systems and use
 
 ---
 
-# Validation
+# Cassandra Validation
 
 After writing the processed DataFrames into Cassandra, all tables were read back into Spark DataFrames.
 
@@ -349,25 +242,6 @@ File:
 ```text
 screenshots/cassandra_validation.png
 ```
-
----
-
-# Key Findings
-
-1. Apache Spark successfully processed the MovieLens 100K dataset using distributed computing techniques.
-
-2. Average ratings were calculated for all movies and stored in Cassandra.
-
-3. Several movies achieved perfect ratings, but most had very few ratings, highlighting the importance of considering rating counts when ranking movies.
-
-4. User behaviour analysis revealed popular movie genres among active users.
-
-5. Demographic filtering successfully identified young users and scientists within a specified age range.
-
-6. Cassandra effectively served as a storage layer for processed analytical results.
-
-7. Validation confirmed successful integration between Spark and Cassandra.
-
 ---
 
 # Reproducibility
