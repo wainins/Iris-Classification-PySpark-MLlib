@@ -45,13 +45,28 @@ F --> G[Write Results to Cassandra]
 G --> H[Read Back from Cassandra]
 
 ```
+### Notebook Structure
 
-### Workflow Screenshot
-
-Insert screenshot here:
-
-```text
-screenshots/workflow.png
+```yaml
+movielens_analysis_spark_cassandra.json
+│
+├── 1. Environment Configuration
+├── 2. Download MovieLens dataset 
+├── 3. Load Data into HDFS
+├── 4. Parse Raw Data into RDDs
+├── 5. Transform RDDs into Spark DataFrames
+├── 6. Data cleaning & preprocessing
+│
+├── 7. Analytical queries using Spark SQL
+│   ├── Task 1
+│   ├── Task 2
+│   ├── Task 3
+│   ├── Task 4
+│   └── Task 5
+│
+└── 8. Write results to Cassandra
+└── 9. Read back from Cassandra for validation
+└── 10. Session Completion
 ```
 ---
 
@@ -71,29 +86,9 @@ screenshots/workflow.png
 
 | Dataset | Records |
 |----------|----------|
-| Ratings | 100,003 |
+| Ratings | 100003 |
 | Users | 943 |
-| Movies | 1,682 |
-
----
-
-# Environment
-
-### Software Versions
-
-| Component | Version |
-|------------|------------|
-| Python | 2.7.5 |
-| Apache Spark | 2.3.1 |
-| Apache Cassandra | 3.11.17 |
-| Apache Zeppelin | 0.8.x |
-| Hadoop | HDP Sandbox |
-
-### Additional Libraries
-
-- pyspark
-- cassandra-driver
-- Spark Cassandra Connector
+| Movies | 1682 |
 
 ---
 
@@ -375,33 +370,6 @@ screenshots/cassandra_validation.png
 
 ---
 
-# Repository Structure
-
-```text
-movielens-spark-cassandra-pipeline/
-
-│
-├── README.md
-├── assignment2_movielens.ipynb
-│
-├── screenshots/
-│   ├── workflow.png
-│   ├── hdfs_files.png
-│   ├── schema.png
-│   ├── cassandra_schema.png
-│   ├── task1_avg_rating.png
-│   ├── task2_top10_movies.png
-│   ├── task3_fav_genre.png
-│   ├── task4_users_under20.png
-│   ├── task5_scientists.png
-│   └── cassandra_validation.png
-│
-└── dataset/
-    └── README.txt
-```
-
----
-
 # Reproducibility
 
 ## Development Environment
@@ -422,22 +390,33 @@ This project was developed and tested using the following environment:
 
 ## Running the Project
 
-1. Ensure Hadoop, Spark, Cassandra, and Zeppelin services are running.
-2. Open Apache Zeppelin.
-3. Import the notebook file:
+1. Ensure HDP Sandbox is running.
+2. Open Apache Zeppelin:
+   http://localhost:9995
+3. Apache Cassandra is running:
+  ```bash
+  pgrep -a java | grep cassandra
+```
+4. Spark interpreter in Zeppelin configured with:
+```bash
+spark.jars.packages = com.datastax.spark:spark-cassandra-connector_2.11:2.3.0
+spark.cassandra.connection.host = 127.0.0.1
+spark.cassandra.connection.port	= 9042
+```
+5. Import the notebook file:
 
 ```text
-movielens_assignment2.json
+movielens_analysis_spark_cassandra.json
 ```
 
-4. Execute the notebook paragraphs sequentially from top to bottom.
+6. Execute the notebook paragraphs sequentially from top to bottom.
 
 ---
-## Notes
 
-All outputs presented in this repository were generated directly from the provided Zeppelin notebook.
-Zeppelin was selected as the development environment because it provides native integration with Apache Spark which allow Spark jobs to be executed directly within interactive notebook paragraphs.
-This notebook also supports built-in visualisation of query results which improves interpretability and reduces the need for external plotting tools.
+> [!NOTE]
+> 1. All outputs presented in this repository were generated directly from the provided Zeppelin notebook.
+> 2. Zeppelin was selected as the development environment because it provides native integration with Apache Spark which allow Spark jobs to be executed directly within interactive notebook paragraphs.
+> 3. This notebook also supports built-in visualisation of query results which improves interpretability and reduces the need for external plotting tools.
 
 ---
 
