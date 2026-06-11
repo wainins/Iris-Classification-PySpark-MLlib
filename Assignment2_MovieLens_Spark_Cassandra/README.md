@@ -7,11 +7,9 @@
 <p align="center">
   <a href="#overview">Overview</a> •
   <a href="#dataset">Dataset</a> •
-  <a href="#workflow">Workflow</a> •
-  <a href="#environment">Environment</a> •
-  <a href="#implementation">Implementation</a> •
+  <a href="#analytical-tasks">Analytical Tasks</a> •
   <a href="#results">Results</a> •
-  <a href="#validation">Validation</a> •
+  <a href="#cassandra-storage-and-validation">Cassandra</a> •
   <a href="#reproducibility">Reproducibility</a> •
   <a href="#author">Author</a>
 </p>
@@ -76,19 +74,11 @@ movielens_analysis_spark_cassandra.json
 
 ### Files Used
 
-| File | Description |
-|--------|--------|
-| u.data | User ratings data |
-| u.user | User demographic information |
-| u.item | Movie information and genres |
-
-### Dataset Summary
-
-| Dataset | Records |
-|----------|----------|
-| Ratings | 100003 |
-| Users | 943 |
-| Movies | 1682 |
+| File | Fields | Records |
+|------|--------|---------|
+| `u.data` | user id, movie id, rating, timestamp | 100,003 |
+| `u.user` | user id, age, occupation, gender, zip code | 943 |
+| `u.item` | movie id, movie title, release date, video release date, IMDb URL, 19 genres | 1,682 |
 
 ---
 
@@ -103,27 +93,24 @@ The following analytical tasks were implemented using Apache Spark and results w
 | 3 | Favourite genre of active users (≥ 50 ratings) | user_fav_genre |
 | 4 | Users under 20 years old | users_under20 |
 | 5 | Scientists aged between 30 and 40 | scientists_30_40 |
+
 ---
 
-# Results & Discussions
+# Results
 
 ## Task 1: Average Rating for Each Movie
 
 The average rating and total number of ratings were calculated for every movie in the dataset.
 
-### Screenshot
+### Result Table
+![Task X Result](...)
 
-Insert screenshot:
+### Visualisation
+![Task X Chart](...)
 
-```text
-screenshots/task1_avg_rating.png
-```
+### Findings
 
-### Discussion
-
-Average ratings were successfully calculated for all movies in the dataset.
-
-Movies with a larger number of ratings provide a more reliable measure of audience preference. In contrast, movies with only a small number of ratings may exhibit extreme average scores that are less representative of overall user opinion.
+Movie ratings varied considerably across the dataset. Some movies achieved high average ratings despite receiving only a few reviews, highlighting the importance of considering rating counts alongside average scores.
 
 ---
 
@@ -131,21 +118,15 @@ Movies with a larger number of ratings provide a more reliable measure of audien
 
 The ten highest-rated movies were identified based on average rating.
 
-### Screenshot
+### Result Table
+![Task X Result](...)
 
-Insert screenshot:
+### Visualisation
+![Task X Chart](...)
 
-```text
-screenshots/task2_top10_movies.png
-```
+### Findings
 
-### Discussion
-
-Several movies achieved a perfect average rating of 5.0.
-
-However, inspection of the results shows that most of these movies received only one to three ratings. This suggests that ranking movies solely by average rating can be misleading because a small sample size may inflate the average score.
-
-A more robust ranking approach would consider both average rating and number of ratings received.
+All top-ranked movies achieved a perfect average rating of 5.0. However, most of these movies received only one to three ratings, which does not necessarily indicate true popularity or quality. 
 
 ---
 
@@ -153,21 +134,15 @@ A more robust ranking approach would consider both average rating and number of 
 
 Users with at least 50 ratings were identified and their favourite genre was determined based on the genre they rated most frequently.
 
-### Screenshot
+### Result Table
+![Task X Result](...)
 
-Insert screenshot:
+### Visualisation
+![Task X Chart](...)
 
-```text
-screenshots/task3_fav_genre.png
-```
+### Findings
 
-### Discussion
-
-The analysis revealed the most frequently rated genres among highly active users.
-
-Genres such as Drama, Comedy, and Action appeared prominently, indicating stronger user engagement with mainstream movie categories.
-
-This task demonstrates how user activity data can be combined with movie metadata to derive behavioural insights.
+Drama, Comedy, and Action were the most frequently rated genres among active users. Less common genres such as Documentary, Fantasy, and Film-Noir received significantly fewer ratings. This is likely due to due to lower engagement or fewer available titles in that genre.
 
 ---
 
@@ -175,21 +150,16 @@ This task demonstrates how user activity data can be combined with movie metadat
 
 Users younger than 20 years old were extracted from the dataset.
 
-### Screenshot
+### Result Table
+![Task X Result](...)
 
-Insert screenshot:
+### Visualisation
+![Task X Chart](...)
 
-```text
-screenshots/task4_users_under20.png
-```
+### Findings
 
-### Discussion
 
-A significant proportion of users under 20 were identified.
-
-Many belonged to the student occupation category, suggesting that younger users formed an important segment of the MovieLens user base.
-
-This query demonstrates demographic filtering capabilities using Spark SQL.
+Most users under 20 were teenagers between 15 and 19 years old and were primarily classified as students (as expected).
 
 ---
 
@@ -197,37 +167,43 @@ This query demonstrates demographic filtering capabilities using Spark SQL.
 
 Users whose occupation was scientist and whose age was between 30 and 40 years old were identified.
 
-### Screenshot
+### Result Table
+![Task X Result](...)
 
-Insert screenshot:
+### Visualisation
+![Task X Chart](...)
 
-```text
-screenshots/task5_scientists.png
-```
+### Findings
 
-### Discussion
-
-Only a small subset of users satisfied both occupation and age requirements.
-
-The result illustrates how Spark SQL can efficiently perform multi-condition filtering on large datasets.
-
-Such demographic segmentation is commonly used in recommendation systems and user profiling applications.
+Only a small number of users matched the scientist occupation and age criteria. The results also showed a notable gender imbalance, with male users making up the majority of this group.
 
 ---
 
-# Cassandra Validation
+# Cassandra Storage and Validation
 
-After writing the processed DataFrames into Cassandra, all tables were read back into Spark DataFrames.
+The analytical results generated by Apache Spark were written to Apache Cassandra for persistent storage.
 
-This step ensured that:
+## Cassandra Tables
 
-- Data was successfully stored in Cassandra
-- No records were lost during transfer
-- Retrieved results matched the original outputs
+| Cassandra Table |
+|-----------------|
+| avg_movie_ratings |
+| top10_movies |
+| user_fav_genre |
+| users_under20 |
+| scientists_30_40 |
 
-### Screenshot
+### Cassandra Schema
 
-Insert screenshot showing:
+![Cassandra Schema](screenshots/cassandra_schema.png)
+
+---
+
+## Validation
+
+After writing the results to Cassandra, the tables were read back into Spark DataFrames to verify successful integration between Apache Spark and Apache Cassandra.
+
+### Validation Example
 
 ```python
 spark.read \
@@ -235,13 +211,13 @@ spark.read \
 .options(table="top10_movies", keyspace="movielens") \
 .load() \
 .show()
+
 ```
 
-File:
+### Validation Result
 
-```text
-screenshots/cassandra_validation.png
-```
+![Cassandra Validation](screenshots/cassandra_validation.png)
+
 ---
 
 # Reproducibility
