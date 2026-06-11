@@ -16,13 +16,11 @@
   <a href="#author">Author</a>
 </p>
 
-> A distributed data processing project using Apache Spark and Apache Cassandra to analyse the MovieLens 100K dataset. The project demonstrates the complete data engineering workflow from data ingestion into HDFS, transformation using Spark, analytical querying with Spark SQL, storage in Cassandra, and result validation.
+> A distributed data processing project using Apache Spark and Apache Cassandra to analyse the MovieLens 100K dataset. This project demonstrates a complete data engineering workflow from data ingestion into HDFS, analytical querying with Spark SQL and storage in Cassandra.
 
 ---
 
 # Overview
-
-This project was developed for **STQD6324 Data Management**.
 
 The objective is to build a Python-based data pipeline using Apache Spark and Cassandra to perform analytical queries on the MovieLens 100K dataset.
 
