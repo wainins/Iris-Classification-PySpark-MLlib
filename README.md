@@ -1,99 +1,159 @@
-<div align="center">
+# Iris Classification with PySpark MLlib
 
-#  STQD6324: Data Management
+<p align="center">
+  <img width="100%" alt="Project Banner" src="https://github.com/user-attachments/assets/f2f67a2c-239f-449f-9de8-32c39f9fe67b" />
+</p>
 
-![Semester](https://img.shields.io/badge/Semester-2%20(2025%2F2026)-blue?style=for-the-badge)
-![Credits](https://img.shields.io/badge/Credits-4-green?style=for-the-badge)
-![Course](https://img.shields.io/badge/Course-Elective-orange?style=for-the-badge)
-![Big Data](https://img.shields.io/badge/Focus-Big%20Data-red?style=for-the-badge)
-![Database](https://img.shields.io/badge/Database-SQL%20%26%20NoSQL-purple?style=for-the-badge)
+<p align="center">
+  <a href="#overview">Overview</a> •
+  <a href="#dataset">Dataset</a> •
+  <a href="#methodology">Methodology</a> •
+  <a href="#notebook-structure">Notebook Structure</a> •
+  <a href="#results-summary">Results Summary</a> •
+  <a href="#reproduce-the-analysis">Run Project</a> •
+  <a href="#author">Author</a>
+</p>
 
-> A comprehensive course covering modern data management technologies, distributed systems, big data processing frameworks, and NoSQL databases.
-
-</div>
-
-
-## Course Information
-
-| Item | Details |
-|--------|---------|
-| Course Code | STQD6324 |
-| Course Name | Data Management |
-| Credit Hours | 4 |
-| Semester | Semester 2, 2025/2026 |
-| Lecturer | Dr. Bernard Lee Kok Bang |
-| Department | Department of Mathematical Sciences, FST, UKM |
+> A machine learning project demonstrating multiclass classification using Apache Spark MLlib. This project implements and compares three classification algorithms on the classic Iris dataset.
 
 ---
 
-##  Assessment Structure
 
-- [x] Quiz
-- [x] [Assignment 1](https://github.com/wainins/STQD6324_Data_Management/tree/main/Assignment1_Iris_Classification) 
-- [ ] Assignment 2 
-- [ ] Final Report
+## Overview
 
-### Overall Progress
-
-```text
-██████████░░░░░░░░░░ 50%
-```
-
----
-
-##  Technologies Covered
+This project showcases a complete ML workflow in PySpark:
 
 ```mermaid
-mindmap
-  root((Data Management))
-    Hadoop Ecosystem
-      HDFS
-      MapReduce
-      Hive
-      Pig
-      Sqoop
-    Big Data Processing
-      Apache Spark
-      Parallel Computing
-      Distributed Systems
-    NoSQL Databases
-      MongoDB
-      Cassandra
-      HBase
-    Management & Coordination
-      YARN
-      Tez
-      ZooKeeper
-      Oozie
-    Query Engines
-      Drill
-      Phoenix
-      Presto
+flowchart LR
+    A[Data Loading & Preprocessing] --> B[Feature Engineering]
+    B --> C[Train-Test Split]
+    C --> D[Model Training & Hyperparameter Tuning]
+    D --> E[Performance Evaluation]
+    E --> F[Model Comparison]
+```
+
+## Dataset
+
+**Iris Dataset** (Fisher, 1936)
+- **Source**: [GitHub](https://raw.githubusercontent.com/plotly/datasets/master/iris-data.csv)↗️
+- **Samples**: 150 iris flowers
+- **Features**: 4 continuous measurements
+  - Sepal length (cm)
+  - Sepal width (cm)
+  - Petal length (cm)
+  - Petal width (cm)
+- **Target**:
+  
+| Setosa | Versicolor | Virginica |
+|---------|---------|---------|
+| <img width="2000" height="2000" alt="Image" src="https://github.com/user-attachments/assets/5582d309-3d13-4974-8ccf-8757a5d985ae" /> | <img width="2000" height="2000" alt="Image" src="https://github.com/user-attachments/assets/a1a35740-46d2-409d-94ba-c18c1012abaf" /> | <img width="2000" height="2000" alt="Image" src="https://github.com/user-attachments/assets/356dd710-ee74-4582-92bc-171a65e25c54" /> |
+
+<br>
+
+## Methodology
+
+### Algorithms Implemented
+| Logistic Regression | Decision Tree | Random Forest |
+|---------|---------|---------|
+
+<br>
+
+### Hyperparameter Tuning
+Each model is optimized using:
+- **5-fold Cross-Validation** for robust performance estimation
+- **Grid Search** over key hyperparameters:
+  - Logistic Regression: `regParam`, `elasticNetParam`, `maxIter`
+  - Decision Tree: `maxDepth`, `impurity`, `minInstancesPerNode`
+  - Random Forest: `numTrees`, `maxDepth`, `maxBins`
+
+<br>
+
+### Evaluation Metrics
+<kbd>🎯 Accuracy</kbd> &nbsp; 
+<kbd>🔍 Weighted Precision</kbd> &nbsp; 
+<kbd>📈 Weighted Recall</kbd> &nbsp; 
+<kbd>⚖️ F1-Score</kbd>
+
+<br> 
+
+## Notebook Structure
+
+```yaml
+iris_classification_pyspark.ipynb
+├── 1. Environment Setup and Imports
+├── 2. Load Iris Dataset
+├── 3. Data Preprocessing
+├── 4. Train-Test Split
+├── 5. Model Implementation with Hyperparameter Tuning
+│   ├── Logistic Regression
+│   ├── Decision Tree
+│   └── Random Forest
+├── 6. Model Evaluation
+├── 7. Predictions on Test Data
+└── 8. Comparative Analysis
+└── 9. Cleanup
+```
+
+<br>
+
+## Results Summary
+
+| Model               | Accuracy | Precision | Recall | F1-Score |
+|---------------------|----------|-----------|--------|----------|
+| Logistic Regression | ~0.97    | ~0.97     | ~0.97  | ~0.97    |
+| Decision Tree       | ~0.91    | ~0.94     | ~0.91  | ~0.91    |
+| Random Forest       | ~0.97    | ~0.97     | ~0.97  | ~0.97    |
+
+> [!NOTE]
+> ###  Key Findings
+> 1. **Top Performers:** Logistic Regression and Random Forest achieved the highest observed performance across all evaluation.
+> 2. **Feature Importance:** Petal measurements (length and width) are the most important features for classification. Sepal features contribute minimally.
+> 3. **Separability:** Setosa is perfectly separable. Most misclassifications occur between Versicolor and Virginica.
+   
+<br>
+
+
+## Reproduce the Analysis
+
+This project was developed using **Google Colab** to simplify the execution of Apache Spark (PySpark) without requiring local installation of Java or Spark.
+
+### Environment Used
+
+![PySpark](https://img.shields.io/badge/PySpark-4.0.2-E25A1C?logo=apachespark&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-2.2.2-150458?logo=pandas&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-3.10.0-11557C?logo=plotly&logoColor=white)
+![Seaborn](https://img.shields.io/badge/Seaborn-0.13.2-4C72B0&logo=python&logoColor=white)
+![Google Colab](https://img.shields.io/badge/Google%20Colab-F9AB00?logo=googlecolab&logoColor=white)
+
+### Execution Guide
+
+**Recommended: Google Colab**
+
+1. Download the notebook file :  `iris_classification_pyspark.ipynb`
+2. Go to: [Google Colab](https://colab.research.google.com/)↗️ 
+3. Upload the notebook file
+4. Make sure to connect runtime: `Runtime → Connect`
+5. Install required libraries (if needed):
+
+```python
+!pip install pyspark pandas matplotlib seaborn
 ```
 ---
 
-##  Repository Structure
+**Alternative: Local Jupyter Notebook**
 
-```text
-STQD6324_Data_Management/
-│
-├── README.md
-│
-└── Assignment1_Iris_Classification/
-    ├── Title.png/
-    ├── iris_classification_pyspark.ipynb/
-    └── iris_setosa.png/
-    └── iris_verginica.png/
-    └── iris_versicolor.png/
+To run locally, ensure you have **Java JDK 8 or 11** installed for the Spark runtime environment.
+
+1. Download the notebook file :  `iris_classification_pyspark.ipynb`
+2. Launch the notebook file in Jupyter Notebook
+3. Install required libraries :
+
+```python
+!pip install pyspark pandas matplotlib seaborn
 ```
 
----
+<br>
 
-##  License
-
-This repository is intended for educational and academic purposes under:
-
-**STQD6324 – Data Management**  
-Department of Mathematical Sciences  
-Faculty of Science and Technology (FST)  
-Universiti Kebangsaan Malaysia (UKM)
+## Author
+* **Name:** Wan Ainin Sofiya binti Wan Mustafa
+* **Matric No:** P160638
