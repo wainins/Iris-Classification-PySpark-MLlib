@@ -122,7 +122,19 @@ iris_classification_pyspark.ipynb
 
 ### Confusion Matrix
 
-[image]
+The confusion matrices show the classification performance of each model across the three Iris species. Most errors occur between **Versicolor** and **Virginica**, while **Setosa** is more easily distinguished.
+
+#### Logistic Regression
+
+<img width="913" height="646" alt="Image" src="https://github.com/user-attachments/assets/10fe19ba-e3df-4cb3-a188-0473c84b606a" />
+
+#### Decision Tree
+
+<img width="885" height="646" alt="Image" src="https://github.com/user-attachments/assets/c5272263-7a35-4037-bb73-b4975512eabb" />
+
+#### Random Forest
+
+<img width="878" height="646" alt="Image" src="https://github.com/user-attachments/assets/d3a5f74f-8b82-47f5-ae59-3859397bead5" />
 
 ### Feature Importance
 
