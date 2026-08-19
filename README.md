@@ -8,20 +8,20 @@
   <a href="#overview">Overview</a> •
   <a href="#dataset">Dataset</a> •
   <a href="#methodology">Methodology</a> •
-  <a href="#notebook-structure">Notebook Structure</a> •
-  <a href="#results-summary">Results Summary</a> •
-  <a href="#reproduce-the-analysis">Run Project</a> •
-  <a href="#author">Author</a>
+  <a href="#results">Results</a> •
+  <a href="#reproduce-the-analysis">Run Project</a>
 </p>
 
-> A machine learning project demonstrating multiclass classification using Apache Spark MLlib. This project implements and compares three classification algorithms on the classic Iris dataset.
+> **Academic Project — STQD6324 Data Management**
+
+> A multiclass classification project using PySpark MLlib to compare Logistic Regression, Decision Tree and Random Forest models on the Iris dataset, with cross-validation and hyperparameter tuning.
 
 ---
 
 
 ## Overview
 
-This project showcases a complete ML workflow in PySpark:
+This project demonstrates an end-to-end multiclass classification workflow using PySpark MLlib:
 
 ```mermaid
 flowchart LR
@@ -35,6 +35,7 @@ flowchart LR
 ## Dataset
 
 **Iris Dataset** (Fisher, 1936)
+
 - **Source**: [GitHub](https://raw.githubusercontent.com/plotly/datasets/master/iris-data.csv)↗️
 - **Samples**: 150 iris flowers
 - **Features**: 4 continuous measurements
@@ -42,7 +43,7 @@ flowchart LR
   - Sepal width (cm)
   - Petal length (cm)
   - Petal width (cm)
-- **Target**:
+- **Target**: `species`
   
 | Setosa | Versicolor | Virginica |
 |---------|---------|---------|
@@ -50,25 +51,32 @@ flowchart LR
 
 <br>
 
-## Methodology
+### Models
 
-### Algorithms Implemented
-| Logistic Regression | Decision Tree | Random Forest |
-|---------|---------|---------|
+Three classification algorithms were implemented and compared:
+
+| Model | Purpose |
+|---|---|
+| **Logistic Regression** | Linear classification model used as a baseline |
+| **Decision Tree** | Tree-based model that captures nonlinear decision boundaries |
+| **Random Forest** | Ensemble of decision trees designed to improve predictive performance and reduce overfitting |
 
 <br>
 
-### Hyperparameter Tuning
-Each model is optimized using:
-- **5-fold Cross-Validation** for robust performance estimation
-- **Grid Search** over key hyperparameters:
-  - Logistic Regression: `regParam`, `elasticNetParam`, `maxIter`
-  - Decision Tree: `maxDepth`, `impurity`, `minInstancesPerNode`
-  - Random Forest: `numTrees`, `maxDepth`, `maxBins`
+### Model Tuning
+
+Each model was optimized using **5-fold cross-validation** and **grid search** over selected hyperparameters:
+
+- **Logistic Regression:** `regParam`, `elasticNetParam`, `maxIter`
+- **Decision Tree:** `maxDepth`, `impurity`, `minInstancesPerNode`
+- **Random Forest:** `numTrees`, `maxDepth`, `maxBins`
 
 <br>
 
 ### Evaluation Metrics
+
+Models were evaluated using **Accuracy, Weighted Precision, Weighted Recall and F1-Score** to assess overall classification performance across the three classes.
+
 <kbd>🎯 Accuracy</kbd> &nbsp; 
 <kbd>🔍 Weighted Precision</kbd> &nbsp; 
 <kbd>📈 Weighted Recall</kbd> &nbsp; 
@@ -76,7 +84,9 @@ Each model is optimized using:
 
 <br> 
 
-## Notebook Structure
+
+```markdown
+### Notebook Structure
 
 ```yaml
 iris_classification_pyspark.ipynb
@@ -96,7 +106,7 @@ iris_classification_pyspark.ipynb
 
 <br>
 
-## Results Summary
+## Results
 
 | Model               | Accuracy | Precision | Recall | F1-Score |
 |---------------------|----------|-----------|--------|----------|
@@ -105,10 +115,18 @@ iris_classification_pyspark.ipynb
 | Random Forest       | ~0.97    | ~0.97     | ~0.97  | ~0.97    |
 
 > [!NOTE]
-> ###  Key Findings
-> 1. **Top Performers:** Logistic Regression and Random Forest achieved the highest observed performance across all evaluation.
-> 2. **Feature Importance:** Petal measurements (length and width) are the most important features for classification. Sepal features contribute minimally.
-> 3. **Separability:** Setosa is perfectly separable. Most misclassifications occur between Versicolor and Virginica.
+> ### Key Findings
+> - **Top Performers:** Logistic Regression and Random Forest achieved the strongest overall test performance.
+> - **Feature Importance:** Petal length and petal width were the most influential features for classification.
+> - **Class Separability:** Setosa was easily separated, while most classification errors occurred between Versicolor and Virginica.
+
+### Confusion Matrix
+
+[image]
+
+### Feature Importance
+
+[image]
    
 <br>
 
@@ -152,8 +170,11 @@ To run locally, ensure you have **Java JDK 8 or 11** installed for the Spark run
 !pip install pyspark pandas matplotlib seaborn
 ```
 
-<br>
+<br> 
 
-## Author
-* **Name:** Wan Ainin Sofiya binti Wan Mustafa
-* **Matric No:** P160638
+---
+
+<p align="center">
+  <i>This project was completed as part of the STQD6324 Data Management course at Universiti Kebangsaan Malaysia.</i>
+</p>
+
